@@ -14,3 +14,8 @@
 
 - ts 지원 여부 확인 (서드파티)
   <a href='https://www.typescriptlang.org/dt/search?search=react-redux'>TypeSearch</a>
+
+## 타입스크립트에서 리덕스 사용 유의점
+
+- 'Action' **_as const_** 붙이기! (타입스크립트의 추론 범위를 좁혀줌)
+- ReturnType<typeof 'Action'>에서 Action에 대한 타입 유추 가능해짐 (ReturnType: typescript 유틸)
