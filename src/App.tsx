@@ -1,8 +1,14 @@
 import React from 'react';
-import TodoApp from './components/TodoApp';
+import './App.module.scss';
+import Todos from './componentsToolkit/Todos';
 
 function App() {
-  return <TodoApp />;
+  return (
+    <div className='App'>
+      투두리스트
+      <Todos />
+    </div>
+  );
 }
 
 export default App;
