@@ -19,3 +19,8 @@
 
 - 'Action' **_as const_** 붙이기! (타입스크립트의 추론 범위를 좁혀줌)
 - ReturnType<typeof 'Action'>에서 Action에 대한 타입 유추 가능해짐 (ReturnType: typescript 유틸)
+
+## 프로젝트를 reduxToolkit으로 변환
+
+- 카운터 예제 변환 완료
+- 투두리스트 예제 변환 완료

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './Todos.module.scss';
 
 type TodoInsertProps = {
   onInsert: (text: string) => void;
@@ -15,13 +16,16 @@ function TodoInsert({ onInsert }: TodoInsertProps) {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} style={styles}>
       <input
+        style={styles}
         placeholder='할 일을 입력하세요.'
         value={text}
         onChange={onChange}
       />
-      <button type='submit'>등록</button>
+      <button style={styles} type='submit'>
+        등록
+      </button>
     </form>
   );
 }

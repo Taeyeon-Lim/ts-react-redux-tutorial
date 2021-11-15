@@ -1,5 +1,9 @@
-import { CSSProperties } from 'react';
+import React from 'react';
 import { Todo } from '../modulesToolkit/todosSlice';
+import styles from './Todos.module.scss';
+import classNames from 'classnames/bind';
+
+const cx = classNames.bind(styles);
 
 type TodoItemProps = {
   todo: Todo;
@@ -8,21 +12,15 @@ type TodoItemProps = {
 };
 
 function TodoItem({ todo, onToggle, onRemove }: TodoItemProps) {
-  const textStyle: CSSProperties = {
-    textDecoration: todo.done ? 'line-through' : 'none',
-  };
-  const removeStyle: CSSProperties = {
-    marginLeft: 10,
-    color: 'red',
-  };
   const handleToggle = () => onToggle(todo.id);
   const handleRemove = () => onRemove(todo.id);
+
   return (
     <li>
-      <span onClick={handleToggle} style={textStyle}>
+      <span onClick={handleToggle} className={cx('text', { done: todo.done })}>
         {todo.text}
       </span>
-      <span onClick={handleRemove} style={removeStyle}>
+      <span onClick={handleRemove} className={cx('removeButton')}>
         (X)
       </span>
     </li>
