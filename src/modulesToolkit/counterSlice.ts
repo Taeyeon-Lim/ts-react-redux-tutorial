@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../modulesToolkit/index';
 
-interface CounterState {
+export interface CounterState {
   count: number;
 }
 
