@@ -29,12 +29,14 @@ describe('<TodoInsert />', () => {
     );
     const input = getByPlaceholderText('할 일을 입력하세요.');
     const button = getByText('등록');
+
     fireEvent.change(input, {
       target: {
         value: 'TDD 2',
       },
     });
     fireEvent.click(button);
+    
     expect(onInsert).toBeCalledWith('TDD 2');
     expect(input).toHaveAttribute('value', '');
   });
